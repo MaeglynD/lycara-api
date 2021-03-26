@@ -8,6 +8,7 @@ import morgan from 'morgan';
 import passport from 'passport';
 import passportConfig from './config/passport.js';
 import routes from './routes/routes.js';
+import { sessionSecret } from './private/index.js';
 
 // Configure passport
 passportConfig(passport);
@@ -52,7 +53,7 @@ app.use(morgan('dev'));
 
 // Express session
 app.use(session({
-	secret: 'basedsecret420_',
+	secret: sessionSecret,
 	resave: true,
 	saveUninitialized: true,
 }));

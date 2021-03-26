@@ -101,7 +101,7 @@ export async function getAllUsers(req, res, next) {
 		const allUsers = await User.getAllUsers();
 
 		// Return info
-		return res.json({ ...allUsers });
+		return res.json(allUsers);
 	} catch (err) {
 		next(err);
 	}

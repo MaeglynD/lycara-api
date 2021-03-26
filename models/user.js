@@ -113,7 +113,7 @@ export async function getProfileInfo(userId) {
 export async function getAllUsers() {
 	// Query to get all users
 	const allUsersQuery = `
-		SELECT *
+		SELECT id, profile_url, first_name, last_name
 		FROM users
 		LIMIT 1000
 	`;
