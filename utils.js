@@ -6,13 +6,13 @@ export const passwordRegex = /(?=^.{6,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[
 
 // Validate a email and a password
 export const validateCredentials = (email, password) => {
-	// Validate email
-	if (!emailRegex.test(email)) {
-		throw new Error('Invalid email');
-	}
+  // Validate email
+  if (!emailRegex.test(email)) {
+    throw new Error('Invalid email');
+  }
 
-	// Validate password
-	if (!passwordRegex.test(password)) {
-		throw new Error('Invalid password');
-	}
+  // Validate password
+  if (!passwordRegex.test(password)) {
+    throw new Error('Invalid password');
+  }
 };

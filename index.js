@@ -19,11 +19,11 @@ const server = http.createServer(app);
 
 // Allow from localhost origin
 const cors = (req, res, next) => {
-	res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
-	res.header('Access-Control-Allow-Credentials', true);
-	res.header('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT');
-	res.header('Access-Control-Allow-Headers', 'Authorization, Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers');
-	next();
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.header('Access-Control-Allow-Credentials', true);
+  res.header('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT');
+  res.header('Access-Control-Allow-Headers', 'Authorization, Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers');
+  next();
 };
 
 // Fake lag
@@ -34,12 +34,12 @@ app.use(cors);
 
 // Urlencoded
 app.use(express.urlencoded({
-	extended: false,
+  extended: false,
 }));
 
 // Parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({
-	extended: false,
+  extended: false,
 }));
 
 // Parse cookies, used for auth
@@ -53,9 +53,9 @@ app.use(morgan('dev'));
 
 // Express session
 app.use(session({
-	secret: sessionSecret,
-	resave: true,
-	saveUninitialized: true,
+  secret: sessionSecret,
+  resave: true,
+  saveUninitialized: true,
 }));
 
 //
@@ -69,5 +69,5 @@ routes(app, passport);
 
 // Listen
 server.listen(8081, () => {
-	console.log('fuck it, we\'ll do it live (on port 8081)');
+  console.log('fuck it, we\'ll do it live (on port 8081)');
 });
